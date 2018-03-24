@@ -4,10 +4,10 @@ btc_prediction
 Predicting the price of Bitcoin using sentiment analysis-driven statistical learning.
 
 ## todos
--test vanilla GBM with btc data, tweaking hyperparamenters
--implement sentiment term into GBM calculation
--move data from src/data to data, fixing scripts in src/data to account for this
--improve modified GBM.
+  * test vanilla GBM with btc data, tweaking hyperparamenters
+  * implement sentiment term into GBM calculation
+  * move data from src/data to data, fixing scripts in src/data to account for this
+  * improve modified GBM.
 
 #
 **Version 0.1**
