@@ -3,6 +3,10 @@ btc_prediction
 
 Predicting the price of Bitcoin using sentiment analysis-driven statistical learning.
 
+## Todos
+-[] Implement data processing components
+
+#
 **Version 0.1**
 
 Project Organization
@@ -61,11 +65,7 @@ Tracking version
 
 ## Installation
 
-## Todos
--[] Draft API Skeleton
--[] Implement data processing components
-
-## Experiments
+# Experiments
 -[] Todo
 
 ## Authors
