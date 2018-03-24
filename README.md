@@ -1,7 +1,7 @@
 btc_prediction
 ==============================
 
-Predicting prices with sentiment analysis of online communiites and ML algorithms.
+Predicting the price of Bitcoin using sentiment analysis-driven statistical learning.
 
 **Version 0.1**
 
