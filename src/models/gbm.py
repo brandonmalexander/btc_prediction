@@ -13,13 +13,13 @@ def Brownian(seed, N):
     W = np.cumsum(b)
     return W, b
 
-def modified_GBM(So, mu, sigma, W, N):    
+def GBM(So, mu, sigma, W, N):    
     """Generates Geometric Brownian Motion.
     :param So:       starting price
     :param mu:       drift coefficient
     :param sigma:    diffusion coefficient
     :param W:        Brownian Motion
-    :param N:        increments
+    :param N:        increments to predict
     :return S:       Geometric Brownian Motion (S(t))
     :return t:       all time-steps
     """
@@ -30,14 +30,13 @@ def modified_GBM(So, mu, sigma, W, N):
         drift = (mu - 0.5 * sigma**2) * t[i]
         diffusion = sigma * W[i-1]
         S_temp = So*np.exp(drift + diffusion)
-        
         S.append(S_temp)
     return S, t
 
 def daily_returns(close, N):
-    """Calculates daily returns, drift, and diffusion
-    :param close:       iterable of closing prices
-    :param N:  ex, scale from 1 to 252 (trade days)
+    """Calculates daily returns, then drift and diffusion from those returns.
+    :param close:       iterable of closing prices as [n, price]
+    :param N:           increments to predict
     :return returns:    daily returns
     :return mu:         drift
     :return sigma:      diffusion
@@ -52,19 +51,8 @@ def daily_returns(close, N):
     sigma = np.std(returns)*np.sqrt(N*1.)#diffusion
     return mu, sigma
 
-
-"""
-So = 55.25 # also close[0]
-N = 252
-seed = 22
-
-N = 2.**6
-W = Brownian(seed, N)[0]
-
-mu = .15 #daily_returns(close, N)[1]
-sigma = .4 #daily_returns(close, N)[2]
-
-S, xs = modified_GBM(So, mu, sigma, W, N)
-plt.plot(xs, S)
-plt.show()
-"""
+def modify_GBM(S, sentiment, alpha):
+    """Modify GBM to account for sentiment. Used to tune alpha.
+    
+    """
+    pass

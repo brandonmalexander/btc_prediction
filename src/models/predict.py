@@ -18,7 +18,7 @@ mu, sigma = gbm.daily_returns(p, timefactor)
 
 
 
-S, xs = gbm.modified_GBM(p[0], mu, sigma, W, N)
+S, xs = gbm.GBM(p[0], mu, sigma, W, N)
 
 plt.plot(xs, S)
 plt.show()
