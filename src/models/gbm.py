@@ -29,15 +29,15 @@ def modified_GBM(So, mu, sigma, W, N):
     for i in range(1,int(N+1)):
         drift = (mu - 0.5 * sigma**2) * t[i]
         diffusion = sigma * W[i-1]
-        # effect of sentiment = some weight * sentiment
-        S_temp = So*np.exp(drift + diffusion)# + ^^ )
+        S_temp = So*np.exp(drift + diffusion)
+        
         S.append(S_temp)
     return S, t
 
-def daily_returns(close, timefactor):
+def daily_returns(close, N):
     """Calculates daily returns, drift, and diffusion
     :param close:       iterable of closing prices
-    :param timefactor:  ex, scale from 1 to 252 (trade days)
+    :param N:  ex, scale from 1 to 252 (trade days)
     :return returns:    daily returns
     :return mu:         drift
     :return sigma:      diffusion
@@ -48,21 +48,21 @@ def daily_returns(close, timefactor):
         yesterday = close[i]
         r = (today - yesterday) / yesterday
         returns.append(r)
-    mu = np.mean(returns)*(timefactor*1.) # drift
-    sigma = np.std(returns)*np.sqrt(timefactor*1.)#diffusion
+    mu = np.mean(returns)*(N*1.) # drift
+    sigma = np.std(returns)*np.sqrt(N*1.)#diffusion
     return mu, sigma
 
 
 """
 So = 55.25 # also close[0]
-timefactor = 252
+N = 252
 seed = 22
 
 N = 2.**6
 W = Brownian(seed, N)[0]
 
-mu = .15 #daily_returns(close, timefactor)[1]
-sigma = .4 #daily_returns(close, timefactor)[2]
+mu = .15 #daily_returns(close, N)[1]
+sigma = .4 #daily_returns(close, N)[2]
 
 S, xs = modified_GBM(So, mu, sigma, W, N)
 plt.plot(xs, S)
