@@ -7,8 +7,20 @@ Predicting the price of Bitcoin using sentiment analysis-driven statistical lear
   * implement sentiment term into GBM calculation
   * learn weights for sentiment
   * move data from src/data to data, fixing scripts in src/data to account for this
-   
-
+  
+## GAME PLAN 
+  * Sentiment Analysis: 
+  ## Brandon: 
+  * Collected online data from Reddit 
+  * Use sentiment API for Classifying (text Blob) 
+  * Use statistical (Brownian Motion) methods for sentiment prediction? 
+  * Weigh Geometric Motion Algo with sentiment data - ask Joe?
+  
+  ## Eddy: 
+  * Use numerical data on different models of stoichastic prediction 
+  * Potential compare other currency's to rise and drop of bitcoin
+  * http://nbviewer.jupyter.org/github/StuartGordonReid/Python-Notebooks/blob/master/Stochastic%20Process%20Algorithms.ipynb
+  
 #
 **Version 0.1**
 
