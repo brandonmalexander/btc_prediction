@@ -7,6 +7,7 @@ Predicting the price of Bitcoin using sentiment analysis-driven statistical lear
   * implement sentiment term into GBM calculation
   * learn weights for sentiment
   * move data from src/data to data, fixing scripts in src/data to account for this
+   
 
 #
 **Version 0.1**
