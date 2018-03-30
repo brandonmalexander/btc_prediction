@@ -16,14 +16,11 @@ Predicting the price of Bitcoin using sentiment analysis-driven statistical lear
 ### misc
   * move data from src/data to data, fixing scripts in src/data to account for this
   
-## GAME PLAN 
-  * Sentiment Analysis: 
   ## Brandon: 
-  * Collected online data from Reddit 
-  * Use sentiment API for Classifying (text Blob) 
-  * Use statistical (Brownian Motion) methods for sentiment prediction? 
-  * Weigh Geometric Motion Algo with sentiment data - ask Joe?
-  
+  * Collected sentiment data from Reddit 
+  * Used TextBlob for sentiment analysis 
+  * creating objective function...  
+
   ## Eddy: 
   * Use numerical data on different models of stoichastic prediction 
   * Potential compare other currency's to rise and drop of bitcoin
