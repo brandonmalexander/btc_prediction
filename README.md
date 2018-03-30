@@ -4,8 +4,16 @@ btc_prediction
 Predicting the price of Bitcoin using sentiment analysis-driven statistical learning.
 
 ## todos
+1. create objective function
   * implement sentiment term into GBM calculation
-  * learn weights for sentiment
+2. figure out how to train
+  * i.e., learn weights for sentiment
+3. plan how to test
+  * need a scorer
+4. once model is built (steps 1-3 above):
+  * cross validation on various timespans, tweak
+  * train on optimal timespan for future predictions, predict away :)
+### misc
   * move data from src/data to data, fixing scripts in src/data to account for this
   
 ## GAME PLAN 
