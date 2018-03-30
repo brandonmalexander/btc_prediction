@@ -79,16 +79,7 @@ Project Organization
 
 --------
 
-Version Tracker
-----------
-Tracking version
-
-## Installation
-
-## Experiments
--[] Todo
-
-## Authors
+# Authors
 * Brandon Alexander - [Github](https://github.com/brandonmalexander)
 * Edward Mina - [Github]()
 
