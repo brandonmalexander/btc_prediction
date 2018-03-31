@@ -19,7 +19,7 @@ def GBM(So, mu, sigma, W, N):
     :param mu:       drift coefficient
     :param sigma:    diffusion coefficient
     :param W:        Brownian Motion
-    :param N:        increments to predict
+    :param N:        increments to predict - **N = len(W)**
     :return S:       Geometric Brownian Motion (S(t))
     :return t:       all time-steps
     """
@@ -32,6 +32,30 @@ def GBM(So, mu, sigma, W, N):
         S_temp = So*np.exp(drift + diffusion)
         S.append(S_temp)
     return S, t
+
+def GBM_step(mu, S, N, sigma, W):
+    """Calculates dS over time T
+    :param mu: drift
+    :param S:  true price
+    :param N:  number of iterations
+    :param sigma: diffusion
+    :param W: brownian
+    :return dS: GBM step
+    """
+    
+    # dS = mu*S(t)*dt + sigma*S(t)*dW(t)
+    pass
+
+def sentiment_GBM():
+    """Applies weighted sentiment to GBM
+    :param :
+    :return :
+    """
+
+    # Price.Predicted @t+1 = Price.True @t + abs(dS)*Weight*(Sentiment @t)
+
+
+    pass
 
 def daily_returns(close, N):
     """Calculates daily returns, then drift and diffusion from those returns.
@@ -51,8 +75,3 @@ def daily_returns(close, N):
     sigma = np.std(returns)*np.sqrt(N*1.)#diffusion
     return mu, sigma
 
-def modify_GBM(S, sentiment, alpha):
-    """Modify GBM to account for sentiment. Used to tune alpha.
-    
-    """
-    pass

@@ -6,8 +6,9 @@ Predicting the price of Bitcoin using sentiment analysis-driven statistical lear
 ## todos
 1. create objective function
   * implement sentiment term into GBM calculation
-2. figure out how to train
-  * i.e., learn weights for sentiment
+2. train
+  * learn correct weights by minimizing error on K-folds of true Price data
+  * where to calculate drift & diffusion?
 3. plan how to test
   * need a scorer
 4. once model is built (steps 1-3 above):
