@@ -36,15 +36,18 @@ def GBM(So, mu, sigma, W, N):
 def GBM_step(mu, S, N, sigma, W):
     """Calculates dS over time T
     :param mu: drift
-    :param S:  true price
-    :param N:  number of iterations
+    :param S:  true price - an iterable?
+    :param N:  
     :param sigma: diffusion
     :param W: brownian
     :return dS: GBM step
     """
-    
-    # dS = mu*S(t)*dt + sigma*S(t)*dW(t)
-    pass
+    dt = 1./N
+    dS = []
+    for i in range(1,int(N))
+        dS.append(mu*S[i-1]*dt + sigma*S[i-1]*W[i])
+    S = np.cumsum(dS)
+    return S
 
 def sentiment_GBM():
     """Applies weighted sentiment to GBM
