@@ -44,21 +44,22 @@ def GBM_step(mu, S, N, sigma, W):
     """
     dt = 1./N
     dS = []
-    for i in range(1,int(N))
-        dS.append(mu*S[i-1]*dt + sigma*S[i-1]*W[i])
+    for i in range(1,int(N)):
+        dS.append(mu*S[i]*dt + sigma*S[i]*W[i])
     S = np.cumsum(dS)
     return S
 
-def sentiment_GBM():
+def sentiment_GBM(P, S, mu, sigma, alpha, W, N):
     """Applies weighted sentiment to GBM
     :param :
     :return :
     """
-
-    # Price.Predicted @t+1 = Price.True @t + abs(dS)*Weight*(Sentiment @t)
-
-
-    pass
+    dt = 1./N
+    dP = []
+    for i in range(int(N)):
+        dP.append(mu*P[i]*dt + sigma*P[i]*W[i] + alpha*S[i])
+    P = np.cumsum(dP)
+    return P
 
 def daily_returns(close, N):
     """Calculates daily returns, then drift and diffusion from those returns.

@@ -47,8 +47,7 @@ def format_date(date):  # for way-way-back machine urls
 
 def get_reddit_dataframe(begin, fin, subreddit, writefile):
     """
-    Makes a big dataframe indexed by a DatetimeIndex for every day from begin to fin. Values are top reddit posts, columns
-        separate titles on a given day/row.
+    Makes a big dataframe indexed by a DatetimeIndex for every day from begin to fin. Values are top reddit posts, columns separate titles on a given day/row.
     :param begin:       starting date of dataframe
     :param fin:         ending date of dataframe
     :param subreddit:   subreddit to scrape
@@ -68,9 +67,9 @@ def get_reddit_dataframe(begin, fin, subreddit, writefile):
 
 driver = webdriver.Firefox()
 subreddit = 'r/bitcoin'
-begin = '2018-01-31'
-fin = '2018-02-13'
-writefile = 'data/text/2018_2_14_832.csv'
+begin = '2018-02-13'
+fin = '2018-04-21'
+writefile = 'reddit_raw_data_4-22.csv'
 
 get_reddit_dataframe(begin, fin, subreddit, writefile)
 

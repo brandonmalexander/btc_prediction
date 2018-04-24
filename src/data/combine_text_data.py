@@ -10,9 +10,9 @@ def combine_chunks(path1, path2):
     return combined
 
 
-chunk1 = 'data/text/master.csv'
-chunk2 = 'data/text/2018_2_14_832.csv'
-bothChunks = 'data/text/raw_reddit_data.csv'
+chunk1 = 'reddit_raw_data.csv'
+chunk2 = 'reddit_raw_data_4-22.csv'
+bothChunks = 'raw_reddit_data_final.csv'
 
 
 df = combine_chunks(chunk1, chunk2)

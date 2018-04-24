@@ -37,10 +37,10 @@ def get_price_data(startdate, enddate):
 driver = webdriver.Firefox()
 
 begin = '2015-02-01'
-fin = '2018-02-13'
+fin = '2018-04-21'
 
 data = get_price_data(begin, fin)
 
-data.to_csv(path_or_buf='data/price_data.csv')
+data.to_csv(path_or_buf='price_data_4-22.csv')
 
 driver.quit()

@@ -17,7 +17,7 @@ def clean_text(s):
     return s
 
 
-read = 'data/reddit_raw_data.csv'
+read = 'raw_reddit_data_final.csv'
 
 rawtextdata = pd.read_csv(filepath_or_buffer=read, infer_datetime_format=True)
 rawtextdata = rawtextdata.set_index(rawtextdata.columns[0])
@@ -26,4 +26,4 @@ cleanedtextdata = rawtextdata.fillna('0')
 
 sentimentdata = cleanedtextdata.applymap(lambda x: TextBlob(x).sentiment.polarity)
 
-sentimentdata.to_csv(path_or_buf='data/reddit_sentiment_data.csv')
+sentimentdata.to_csv(path_or_buf='reddit_sentiment_data_final.csv')
